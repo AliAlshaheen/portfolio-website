@@ -3,25 +3,25 @@ document.addEventListener("DOMContentLoaded", function() {
     var height = 500;
 
     var words = [
-        {text: "Java", size: 90, color: "white"},
-        {text: "Python", size: 80, color: "white"},
-        {text: "SQL", size: 70, color: "white"},
-        {text: "C/C++", size: 70, color: "white"},
-        {text: "F#", size: 60, color: "white"},
-        {text: "Dart", size: 90, color: "white"},
-        {text: "JavaScript", size: 80, color: "white"},
-        {text: "HTML/CSS", size: 60, color: "white"},
-        {text: "AWS", size: 90, color: "white"},
-        {text: "React", size: 80, color: "white"},
-        {text: "Django", size: 60, color: "white"},
-        {text: "Android Studio", size: 70, color: "white"},
-        {text: "Flutter", size: 60, color: "white"},
-        {text: "Data Visualization", size: 90, color: "white"},
-        {text: "Pandas", size: 70, color: "white"},
-        {text: "Excel", size: 60, color: "white"},
-        {text: "Linux/Unix", size: 90, color: "white"},
-        {text: "Git", size: 80, color: "white"},
-        {text: "UI Design", size: 60, color: "white"}
+        {text: "Java", size: 90},
+        {text: "Python", size: 80},
+        {text: "SQL", size: 70},
+        {text: "C/C++", size: 70},
+        {text: "F#", size: 60},
+        {text: "Dart", size: 90},
+        {text: "JavaScript", size: 80},
+        {text: "HTML/CSS", size: 60},
+        {text: "AWS", size: 90},
+        {text: "React", size: 80},
+        {text: "Django", size: 60},
+        {text: "Android Studio", size: 70},
+        {text: "Flutter", size: 60},
+        {text: "Data Visualization", size: 90},
+        {text: "Pandas", size: 70},
+        {text: "Excel", size: 60},
+        {text: "Linux/Unix", size: 90},
+        {text: "Git", size: 80},
+        {text: "UI Design", size: 60}
     ];
 
     var layout = d3.layout.cloud()
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .data(words)
             .enter().append("text")
             .style("font-size", function(d) { return d.size + "px"; })
-            .style("fill", function(d) { return d.color; })
+            .style("fill", "white")
             .attr("text-anchor", "middle")
             .attr("transform", function(d) {
                 d.x = Math.random() * (width - d.size) - (width / 2 - d.size / 2);
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .text(function(d) { return d.text; });
 
         animateWords(text);
-        highlightSkills(text);
+        setInterval(updateHighlight, 3000, text);
     }
 
     function animateWords(text) {
@@ -73,27 +73,33 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
-    function highlightSkills(text) {
-        var highlightedSkills = [];
+    function updateHighlight(text) {
+        var allWords = text.nodes();
+        var highlightedWord = d3.select(allWords.filter(function(word) {
+            return d3.select(word).style("fill") === "rgb(255, 69, 0)"; // Check for orangered color
+        })[0]);
 
-        function updateHighlight() {
-            // Unhighlight all skills first
-            text.style("fill", function(d) { return d.color; })
-                .style("font-weight", "normal");
+        // Unhighlight the current highlighted word gradually
+        highlightedWord.transition()
+            .duration(1000)
+            .style("fill", "white")
+            .style("font-weight", "normal")
+            .on("end", function() {
+                animateWords(highlightedWord);
+            });
 
-            // Randomly select 4 skills to highlight
-            highlightedSkills = d3.shuffle(text.nodes()).slice(0, 4);
+        // Highlight a new word gradually
+        var newHighlightedWord = d3.select(d3.shuffle(allWords).filter(function(word) {
+            return d3.select(word).style("fill") !== "rgb(255, 69, 0)"; // Avoid already highlighted word
+        })[0]);
 
-            d3.selectAll(highlightedSkills)
-                .style("fill", "orangered")
-                .style("font-weight", "bold")
-                .raise();
-        }
-
-        // Initial highlight
-        updateHighlight();
-
-        // Update highlight every 3 seconds
-        setInterval(updateHighlight, 3000);
+        newHighlightedWord.raise() // Ensure highlighted word stays on top
+            .transition()
+            .duration(1000)
+            .style("fill", "orangered")
+            .style("font-weight", "bold")
+            .on("end", function() {
+                animateWords(newHighlightedWord);
+            });
     }
 });

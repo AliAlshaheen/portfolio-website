@@ -56,29 +56,10 @@ footer {
 }
 
 /* Word cloud styling */
-.word-cloud {
+#word-cloud {
+    width: 100%;
+    height: 500px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-}
-
-.skill {
-    font-weight: bold;
-}
-
-.skill-large {
-    font-size: 2em;
-}
-
-.skill-medium {
-    font-size: 1.5em;
-}
-
-.skill-small {
-    font-size: 1em;
-}
-
-.skill-orange {
-    color: orangered;
+    align-items: center;
 }

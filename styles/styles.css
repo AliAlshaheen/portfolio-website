@@ -4,16 +4,16 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: black;
+    color: white;
 }
 
 /* Header styling */
 header {
-    background: #333;
-    color: white;
+    background: orangered;
     padding: 10px 0;
 }
 
-/* Navigation styling */
 nav ul {
     list-style: none;
     padding: 0;
@@ -28,6 +28,11 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Main content styling */
@@ -35,14 +40,13 @@ main {
     padding: 20px;
 }
 
-/* Section styling */
 section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* Footer styling */
 footer {
-    background: #333;
+    background: orangered;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -62,7 +66,7 @@ footer {
 }
 
 #contact a {
-    color: #333;
+    color: orangered;
     text-decoration: none;
 }
 

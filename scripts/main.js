@@ -28,28 +28,50 @@ document.addEventListener("DOMContentLoaded", function() {
         .size([width, height])
         .words(words)
         .padding(5)
-        .rotate(function() { return ~~(Math.random() * 2) * 90; })
+        .rotate(0) // Ensure all words are right-side up
         .fontSize(function(d) { return d.size; })
         .on("end", draw);
 
     layout.start();
 
     function draw(words) {
-        d3.select("#word-cloud")
+        var svg = d3.select("#word-cloud")
             .append("svg")
             .attr("width", layout.size()[0])
             .attr("height", layout.size()[1])
             .append("g")
-            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-            .selectAll("text")
+            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")");
+
+        var text = svg.selectAll("text")
             .data(words)
             .enter().append("text")
             .style("font-size", function(d) { return d.size + "px"; })
             .style("fill", function(d) { return d.color; })
             .attr("text-anchor", "middle")
             .attr("transform", function(d) {
-                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                return "translate(" + [d.x, d.y] + ")";
             })
             .text(function(d) { return d.text; });
+
+        animateWords(text);
+    }
+
+    function animateWords(text) {
+        text.transition()
+            .duration(2000)
+            .attr("transform", function(d) {
+                d.x = Math.random() * (width - d.size) - (width / 2 - d.size / 2);
+                d.y = Math.random() * (height - d.size) - (height / 2 - d.size / 2);
+                return "translate(" + [d.x, d.y] + ")";
+            })
+            .on("end", function() {
+                d3.select(this).call(animateWords);
+            });
+
+        setInterval(function() {
+            text.style("fill", function(d, i) {
+                return i % 2 === 0 ? "orangered" : "white";
+            });
+        }, 3000);
     }
 });

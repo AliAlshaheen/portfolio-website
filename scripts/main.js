@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var width = document.getElementById('word-cloud').offsetWidth;
-    var height = 500;
+    var container = document.getElementById('word-cloud');
+    var width = container.offsetWidth;
+    var height = container.offsetHeight;
+
+    console.log('Container dimensions:', width, height);
 
     var words = [
         {text: "Java", size: 90},
@@ -24,6 +27,19 @@ document.addEventListener("DOMContentLoaded", function() {
         {text: "UI Design", size: 60}
     ];
 
+    // Corrected scaling factor for font sizes
+    var maxFontSize = 60; // Adjust this value as needed
+    var minFontSize = 20; // Adjust this value as needed
+    var scale = d3.scaleLinear()
+        .domain([20, 100]) // Adjust this domain based on the original word sizes
+        .range([minFontSize, maxFontSize]);
+
+    words.forEach(function(d) {
+        d.size = scale(d.size);
+    });
+
+    console.log('Scaled words:', words);
+
     var layout = d3.layout.cloud()
         .size([width, height])
         .words(words)
@@ -37,10 +53,12 @@ document.addEventListener("DOMContentLoaded", function() {
     function draw(words) {
         var svg = d3.select("#word-cloud")
             .append("svg")
-            .attr("width", layout.size()[0])
-            .attr("height", layout.size()[1])
+            .attr("width", width)
+            .attr("height", height)
             .append("g")
-            .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")");
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+        console.log('SVG and group created');
 
         var text = svg.selectAll("text")
             .data(words)
@@ -51,9 +69,12 @@ document.addEventListener("DOMContentLoaded", function() {
             .attr("transform", function(d) {
                 d.x = Math.random() * (width - d.size) - (width / 2 - d.size / 2);
                 d.y = Math.random() * (height - d.size) - (height / 2 - d.size / 2);
+                console.log('Position for', d.text, ':', d.x, d.y);
                 return "translate(" + [d.x, d.y] + ")";
             })
             .text(function(d) { return d.text; });
+
+        console.log('Text elements created');
 
         animateWords(text);
         setInterval(updateHighlight, 3000, text);
@@ -66,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .attr("transform", function(d) {
                 d.x = Math.random() * (width - d.size) - (width / 2 - d.size / 2);
                 d.y = Math.random() * (height - d.size) - (height / 2 - d.size / 2);
+                console.log('Animating', d.text, 'to', d.x, d.y);
                 return "translate(" + [d.x, d.y] + ")";
             })
             .on("end", function() {
@@ -103,3 +125,4 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 });
+ 

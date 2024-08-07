@@ -3,15 +3,15 @@ document.addEventListener("DOMContentLoaded", function() {
     var height = 500;
 
     var words = [
-        {text: "Java", size: 90, color: "orangered"},
-        {text: "Python", size: 80, color: "orangered"},
-        {text: "SQL", size: 70, color: "orangered"},
+        {text: "Java", size: 90, color: "white"},
+        {text: "Python", size: 80, color: "white"},
+        {text: "SQL", size: 70, color: "white"},
         {text: "C/C++", size: 70, color: "white"},
         {text: "F#", size: 60, color: "white"},
         {text: "Dart", size: 90, color: "white"},
         {text: "JavaScript", size: 80, color: "white"},
         {text: "HTML/CSS", size: 60, color: "white"},
-        {text: "AWS", size: 90, color: "orangered"},
+        {text: "AWS", size: 90, color: "white"},
         {text: "React", size: 80, color: "white"},
         {text: "Django", size: 60, color: "white"},
         {text: "Android Studio", size: 70, color: "white"},
@@ -49,16 +49,20 @@ document.addEventListener("DOMContentLoaded", function() {
             .style("fill", function(d) { return d.color; })
             .attr("text-anchor", "middle")
             .attr("transform", function(d) {
+                d.x = Math.random() * (width - d.size) - (width / 2 - d.size / 2);
+                d.y = Math.random() * (height - d.size) - (height / 2 - d.size / 2);
                 return "translate(" + [d.x, d.y] + ")";
             })
             .text(function(d) { return d.text; });
 
         animateWords(text);
+        highlightSkills(text);
     }
 
     function animateWords(text) {
         text.transition()
-            .duration(2000)
+            .duration(20000)
+            .ease(d3.easeLinear)
             .attr("transform", function(d) {
                 d.x = Math.random() * (width - d.size) - (width / 2 - d.size / 2);
                 d.y = Math.random() * (height - d.size) - (height / 2 - d.size / 2);
@@ -67,11 +71,29 @@ document.addEventListener("DOMContentLoaded", function() {
             .on("end", function() {
                 d3.select(this).call(animateWords);
             });
+    }
 
-        setInterval(function() {
-            text.style("fill", function(d, i) {
-                return i % 2 === 0 ? "orangered" : "white";
-            });
-        }, 3000);
+    function highlightSkills(text) {
+        var highlightedSkills = [];
+
+        function updateHighlight() {
+            // Unhighlight all skills first
+            text.style("fill", function(d) { return d.color; })
+                .style("font-weight", "normal");
+
+            // Randomly select 4 skills to highlight
+            highlightedSkills = d3.shuffle(text.nodes()).slice(0, 4);
+
+            d3.selectAll(highlightedSkills)
+                .style("fill", "orangered")
+                .style("font-weight", "bold")
+                .raise();
+        }
+
+        // Initial highlight
+        updateHighlight();
+
+        // Update highlight every 3 seconds
+        setInterval(updateHighlight, 3000);
     }
 });

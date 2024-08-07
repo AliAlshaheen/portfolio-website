@@ -55,21 +55,30 @@ footer {
     bottom: 0;
 }
 
-/* Contact section styling */
-#contact ul {
-    list-style: none;
-    padding: 0;
+/* Word cloud styling */
+.word-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
-#contact ul li {
-    margin-bottom: 10px;
+.skill {
+    font-weight: bold;
 }
 
-#contact a {
+.skill-large {
+    font-size: 2em;
+}
+
+.skill-medium {
+    font-size: 1.5em;
+}
+
+.skill-small {
+    font-size: 1em;
+}
+
+.skill-orange {
     color: orangered;
-    text-decoration: none;
-}
-
-#contact a:hover {
-    text-decoration: underline;
 }

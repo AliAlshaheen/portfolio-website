@@ -144,7 +144,7 @@ h1 {
 
 .skill-pannel {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
@@ -152,31 +152,38 @@ h1 {
 }
 
 .skill {
+  display: flex;
+  align-items: center;
   background-color: #181818;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  padding: 20px;
+  padding: 15px 20px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
 }
 
 .skill img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.skill-details {
+  display: flex;
+  flex-direction: column;
 }
 
 .skill-name {
   font-size: 1.25rem;
-  margin: 10px 0;
+  margin: 0 0 5px;
 }
 
 .skill-info {
-  font-size: 1rem;
+  font-size: 0.89rem;
   color: #a0a0a0;
+  margin: 0;
 }

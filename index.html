@@ -3,214 +3,290 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
+    <title>Ali Alshaheen | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <!-- Personal Info Section -->
-    <div class="widget-container">
-      <section class="personal-info">
-        <h2 class="name">Ali Alshaheen</h2>
-        <p class="location">Plainfield, IL</p>
-        <p class="intro">
-          Full-stack developer focused on front-end development, crafting
-          seamless and user-friendly web experiences.
+    <nav class="navbar" data-aos="fade-down" data-aos-duration="700">
+      <div class="nav-brand">Ali Alshaheen</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+      </ul>
+    </nav>
+    <header id="home" class="hero">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="700">
+        <h1 class="hero-name">Ali Alshaheen</h1>
+        <p class="hero-location">Plainfield, IL</p>
+        <p class="hero-intro">
+          Full-stack developer passionate about front-end perfection—crafting
+          intuitive, user-focused web experiences.
         </p>
-      </section>
-    </div>
-
-    <!-- Skills Section -->
-    <div class="skill-pannel">
-      <div class="skill">
-        <div class="skill-icon bootstrap">
-          <img src="images/Bootstrap.png" alt="Bootstrap Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">Bootstrap</h3>
-          <p class="skill-info">CSS Framework</p>
-        </div>
       </div>
-      <div class="skill">
-        <div class="skill-icon css">
-          <img src="images/css.png" alt="CSS Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">CSS</h3>
-          <p class="skill-info">Style Sheet Language</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon html">
-          <img src="images/html.png" alt="HTML Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">HTML</h3>
-          <p class="skill-info">Markup Language</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon javascript">
-          <img src="images/js.png" alt="JavaScript Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">JavaScript</h3>
-          <p class="skill-info">Programming Language</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon react">
-          <img src="images/react.png" alt="React Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">React</h3>
-          <p class="skill-info">JavaScript Library</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon typescript">
-          <img src="images/typescript.png" alt="TypeScript Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">TypeScript</h3>
-          <p class="skill-info">JavaScript Superset</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon python">
-          <img src="images/python.png" alt="Python Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">Python</h3>
-          <p class="skill-info">Programming Language</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon cpp">
-          <img src="images/cpp.png" alt="C++ Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">C++</h3>
-          <p class="skill-info">Programming Language</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon tailwind">
-          <img src="images/tailwind.png" alt="Tailwind Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">Tailwind</h3>
-          <p class="skill-info">CSS Framework</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon figma">
-          <img src="images/figma.png" alt="Figma Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">Figma</h3>
-          <p class="skill-info">Design Tool</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon git">
-          <img src="images/git.png" alt="Git Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">Git</h3>
-          <p class="skill-info">Version Control</p>
-        </div>
-      </div>
-      <div class="skill">
-        <div class="skill-icon next">
-          <img src="images/next.png" alt="Next.js Logo" />
-        </div>
-        <div class="skill-details">
-          <h3 class="skill-name">Next.js</h3>
-          <p class="skill-info">React Framework</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio">
-      <h2 class="portfolio-title">My Portfolio</h2>
-      <div class="portfolio-grid">
-        <!-- Project 1 -->
-        <div class="project-widget">
+    </header>
+    <section id="skills" class="skills-section">
+      <h2 class="section-title" data-aos="fade-right" data-aos-duration="700">
+        Skills
+      </h2>
+      <div class="skills-grid">
+        <div class="skill" data-aos="zoom-in" data-aos-duration="500">
           <img
-            src="images\QRproj.png"
-            alt="Project 1 Screenshot"
-            class="project-image"
+            src="images/Bootstrap.png"
+            alt="Bootstrap Logo"
+            class="skill-img"
           />
-          <h3 class="project-title">QR Code Generator</h3>
-          <p class="project-description">
-            A web-based QR code generator for any given custom URL input
-          </p>
-          <a
-            href="https://github.com/AliAlshaheen/QR-Code-Generator"
-            class="project-link"
-            target="_blank"
-            >View on GitHub</a
-          >
+          <h3>Bootstrap</h3>
+          <p>CSS Framework</p>
         </div>
-
-        <!-- Project 2 -->
-        <div class="project-widget">
-          <img
-            src="images\tic_tac_toe.png"
-            alt="Project 2 Screenshot"
-            class="project-image"
-          />
-          <h3 class="project-title">Tic-Tac-Toe</h3>
-          <p class="project-description">
-            Fully responsive, modern-themed Tic-Tac-Toe web application
-          </p>
-          <a
-            href="https://github.com/AliAlshaheen/Tic-Tac-Toe"
-            class="project-link"
-            target="_blank"
-            >View on GitHub</a
-          >
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="50"
+        >
+          <img src="images/css.png" alt="CSS Logo" class="skill-img" />
+          <h3>CSS</h3>
+          <p>Style Sheets</p>
         </div>
-
-        <!-- Project 3 -->
-        <div class="project-widget">
-          <img
-            src="images\wordle-clone.png"
-            alt="Project 3 Screenshot"
-            class="project-image"
-          />
-          <h3 class="project-title">Wordle Clone</h3>
-          <p class="project-description">
-            A fun Wordle clone: guess the 5-letter word in 6 tries!
-          </p>
-          <a
-            href="https://github.com/AliAlshaheen/wordle-clone"
-            class="project-link"
-            target="_blank"
-            >View on GitHub</a
-          >
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="100"
+        >
+          <img src="images/html.png" alt="HTML Logo" class="skill-img" />
+          <h3>HTML</h3>
+          <p>Markup Language</p>
         </div>
-
-        <!-- Project 4 -->
-        <div class="project-widget">
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="150"
+        >
+          <img src="images/js.png" alt="JavaScript Logo" class="skill-img" />
+          <h3>JavaScript</h3>
+          <p>Programming Language</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="200"
+        >
+          <img src="images/react.png" alt="React Logo" class="skill-img" />
+          <h3>React</h3>
+          <p>JS Library</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="250"
+        >
           <img
-            src="images\wordle-clone.png"
-            alt="Project 4 Screenshot"
-            class="project-image"
+            src="images/typescript.png"
+            alt="TypeScript Logo"
+            class="skill-img"
           />
-          <h3 class="project-title">Wordle Clone 2</h3>
-          <p class="project-description">
-            A fun Wordle clone: guess the 5-letter word in 6 tries!
-          </p>
-          <a
-            href="https://github.com/yourusername/project4"
-            class="project-link"
-            target="_blank"
-            >View on GitHub</a
-          >
+          <h3>TypeScript</h3>
+          <p>JS Superset</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="300"
+        >
+          <img src="images/python.png" alt="Python Logo" class="skill-img" />
+          <h3>Python</h3>
+          <p>Programming Language</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="350"
+        >
+          <img src="images/cpp.png" alt="C++ Logo" class="skill-img" />
+          <h3>C++</h3>
+          <p>Programming Language</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="400"
+        >
+          <img
+            src="images/tailwind.png"
+            alt="Tailwind Logo"
+            class="skill-img"
+          />
+          <h3>Tailwind</h3>
+          <p>CSS Framework</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="450"
+        >
+          <img src="images/figma.png" alt="Figma Logo" class="skill-img" />
+          <h3>Figma</h3>
+          <p>Design Tool</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="500"
+        >
+          <img src="images/git.png" alt="Git Logo" class="skill-img" />
+          <h3>Git</h3>
+          <p>Version Control</p>
+        </div>
+        <div
+          class="skill"
+          data-aos="zoom-in"
+          data-aos-duration="500"
+          data-aos-delay="550"
+        >
+          <img src="images/next.png" alt="Next.js Logo" class="skill-img" />
+          <h3>Next.js</h3>
+          <p>React Framework</p>
         </div>
       </div>
     </section>
+    <section id="portfolio" class="portfolio-section">
+      <h2 class="section-title" data-aos="fade-left" data-aos-duration="700">
+        My Portfolio
+      </h2>
+      <div class="portfolio-grid">
+        <div class="project" data-aos="fade-up" data-aos-duration="500">
+          <img
+            src="images/QRproj.png"
+            alt="QR Code Generator Project"
+            class="project-img"
+          />
+          <h3 class="project-title">QR Code Generator</h3>
+          <p class="project-description">
+            A web-based QR code generator for custom URLs.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/AliAlshaheen/QR-Code-Generator"
+              target="_blank"
+              class="project-link"
+              >View on GitHub</a
+            >
+            <a
+              href="https://yourwebsite.com/qr-code-generator"
+              target="_blank"
+              class="project-link live-link"
+              >View Project</a
+            >
+          </div>
+        </div>
+        <div
+          class="project"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="50"
+        >
+          <img
+            src="images/tic_tac_toe.png"
+            alt="Tic-Tac-Toe Project"
+            class="project-img"
+          />
+          <h3 class="project-title">Tic-Tac-Toe</h3>
+          <p class="project-description">
+            A modern, responsive Tic-Tac-Toe game.
+          </p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/AliAlshaheen/Tic-Tac-Toe"
+              target="_blank"
+              class="project-link"
+              >View on GitHub</a
+            >
+            <a
+              href="https://yourwebsite.com/tic-tac-toe"
+              target="_blank"
+              class="project-link live-link"
+              >View Project</a
+            >
+          </div>
+        </div>
+        <div
+          class="project"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="100"
+        >
+          <img
+            src="images/wordle-clone.png"
+            alt="Wordle Clone Project"
+            class="project-img"
+          />
+          <h3 class="project-title">Wordle Clone</h3>
+          <p class="project-description">Guess the 5-letter word in 6 tries!</p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/AliAlshaheen/wordle-clone"
+              target="_blank"
+              class="project-link"
+              >View on GitHub</a
+            >
+            <a
+              href="https://yourwebsite.com/wordle-clone"
+              target="_blank"
+              class="project-link live-link"
+              >View Project</a
+            >
+          </div>
+        </div>
+        <div
+          class="project"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay="150"
+        >
+          <img
+            src="images/wordle-clone.png"
+            alt="Wordle Clone 2 Project"
+            class="project-img"
+          />
+          <h3 class="project-title">Wordle Clone 2</h3>
+          <p class="project-description">Another twist on the Wordle game.</p>
+          <div class="project-buttons">
+            <a
+              href="https://github.com/yourusername/project4"
+              target="_blank"
+              class="project-link"
+              >View on GitHub</a
+            >
+            <a
+              href="https://yourwebsite.com/wordle-clone-2"
+              target="_blank"
+              class="project-link live-link"
+              >View Project</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: false, offset: 50 });
+    </script>
   </body>
 </html>

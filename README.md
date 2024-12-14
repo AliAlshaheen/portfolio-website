@@ -5,11 +5,8 @@ Welcome to my portfolio website! This repository contains the code for my person
 ## Table of Contents
 
 - [About](#about)
-- [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Projects](#projects)
-- [Setup](#setup)
-- [Contact](#contact)
 
 ## Contact
 

@@ -15,4 +15,4 @@ Feel free to reach out to me via email or connect with me on LinkedIn.
 - Phone Number: +1 (773) 818-7416
 - Email: alihadeeralshaheen@gmail.com
 - LinkedIn: linkedin.com/in/alialshaheen
-- GitHub: github.com/AliAlshaheen
+- GitHub: github.com/AliAlshaheen/

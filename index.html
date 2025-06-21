@@ -1,307 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ali Alshaheen | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link rel="stylesheet" href="styles/styles.css" />
-  </head>
-  <body>
-    <nav class="navbar" data-aos="fade-down" data-aos-duration="700">
-      <div class="nav-brand">Ali Alshaheen</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-      </ul>
-      <ul class="nav-social">
-        <li>
-          <a href="https://www.linkedin.com/in/alialshaheen/" target="_blank"
-            ><img
-              src="images/linkedin.png"
-              alt="LinkedIn Logo"
-              class="social-icon"
-          /></a>
-        </li>
-        <li>
-          <a href="https://github.com/AliAlshaheen" target="_blank"
-            ><img src="images/github.png" alt="GitHub Logo" class="social-icon"
-          /></a>
-        </li>
-      </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Alshaheen | Digital Architect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-text">LOADING...</div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <canvas class="bg-canvas" id="bgCanvas"></canvas>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">Ali.dev</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-    <header id="home" class="hero">
-      <div class="hero-content" data-aos="fade-up" data-aos-duration="700">
-        <h1 class="hero-name">Ali Alshaheen</h1>
-        <p class="hero-location">Plainfield, IL</p>
-        <p class="hero-intro">
-          Full-stack developer passionate about front-end perfection—crafting
-          intuitive, user-focused web experiences.
-        </p>
-      </div>
-    </header>
-    <section id="skills" class="skills-section">
-      <h2 class="section-title" data-aos="fade-right" data-aos-duration="700">
-        Skills
-      </h2>
-      <div class="skills-grid">
-        <div class="skill" data-aos="zoom-in" data-aos-duration="500">
-          <img
-            src="images/Bootstrap.png"
-            alt="Bootstrap Logo"
-            class="skill-img"
-          />
-          <h3>Bootstrap</h3>
-          <p>CSS Framework</p>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span>A</span><span>l</span><span>i</span>
+                <span class="glitch" data-text="Alshaheen">Alshaheen</span>
+            </h1>
+            <p class="hero-subtitle">Full-Stack Developer & Digital Architect</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
         </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="50"
-        >
-          <img src="images/css.png" alt="CSS Logo" class="skill-img" />
-          <h3>CSS</h3>
-          <p>Style Sheets</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="100"
-        >
-          <img src="images/html.png" alt="HTML Logo" class="skill-img" />
-          <h3>HTML</h3>
-          <p>Markup Language</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="150"
-        >
-          <img src="images/js.png" alt="JavaScript Logo" class="skill-img" />
-          <h3>JavaScript</h3>
-          <p>Programming Language</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="200"
-        >
-          <img src="images/react.png" alt="React Logo" class="skill-img" />
-          <h3>React</h3>
-          <p>JS Library</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="250"
-        >
-          <img
-            src="images/typescript.png"
-            alt="TypeScript Logo"
-            class="skill-img"
-          />
-          <h3>TypeScript</h3>
-          <p>JS Superset</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="300"
-        >
-          <img src="images/python.png" alt="Python Logo" class="skill-img" />
-          <h3>Python</h3>
-          <p>Programming Language</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="350"
-        >
-          <img src="images/cpp.png" alt="C++ Logo" class="skill-img" />
-          <h3>C++</h3>
-          <p>Programming Language</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="400"
-        >
-          <img
-            src="images/tailwind.png"
-            alt="Tailwind Logo"
-            class="skill-img"
-          />
-          <h3>Tailwind</h3>
-          <p>CSS Framework</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="450"
-        >
-          <img src="images/figma.png" alt="Figma Logo" class="skill-img" />
-          <h3>Figma</h3>
-          <p>Design Tool</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="500"
-        >
-          <img src="images/git.png" alt="Git Logo" class="skill-img" />
-          <h3>Git</h3>
-          <p>Version Control</p>
-        </div>
-        <div
-          class="skill"
-          data-aos="zoom-in"
-          data-aos-duration="500"
-          data-aos-delay="550"
-        >
-          <img src="images/next.png" alt="Next.js Logo" class="skill-img" />
-          <h3>Next.js</h3>
-          <p>React Framework</p>
-        </div>
-      </div>
     </section>
-    <section id="portfolio" class="portfolio-section">
-      <h2 class="section-title" data-aos="fade-left" data-aos-duration="700">
-        My Portfolio
-      </h2>
-      <div class="portfolio-grid">
-        <div class="project" data-aos="fade-up" data-aos-duration="500">
-          <img
-            src="images/QRproj.png"
-            alt="QR Code Generator Project"
-            class="project-img"
-          />
-          <h3 class="project-title">QR Code Generator</h3>
-          <p class="project-description">QR code generator for custom URLs.</p>
-          <div class="project-buttons">
-            <a
-              href="https://github.com/AliAlshaheen/QR-Code-Generator"
-              target="_blank"
-              class="project-link"
-              >View on GitHub</a
-            >
-            <a
-              href="https://alialshaheen.github.io/QR-Code-Generator/"
-              target="_blank"
-              class="project-link live-link"
-              >View Project</a
-            >
-          </div>
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">Technical Arsenal</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">⚛️</div>
+                <h3 class="skill-name">React</h3>
+                <p class="skill-level">Advanced</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3 class="skill-name">CSS</h3>
+                <p class="skill-level">Expert</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">⚡</div>
+                <h3 class="skill-name">JavaScript</h3>
+                <p class="skill-level">Advanced</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔷</div>
+                <h3 class="skill-name">TypeScript</h3>
+                <p class="skill-level">Advanced</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🐍</div>
+                <h3 class="skill-name">Python</h3>
+                <p class="skill-level">Intermediate</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🚀</div>
+                <h3 class="skill-name">Next.js</h3>
+                <p class="skill-level">Advanced</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💨</div>
+                <h3 class="skill-name">Tailwind</h3>
+                <p class="skill-level">Expert</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🔥</div>
+                <h3 class="skill-name">Firebase</h3>
+                <p class="skill-level">Intermediate</p>
+            </div>
         </div>
-        <div
-          class="project"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="50"
-        >
-          <img
-            src="images/tic_tac_toe.png"
-            alt="Tic-Tac-Toe Project"
-            class="project-img"
-          />
-          <h3 class="project-title">Tic-Tac-Toe</h3>
-          <p class="project-description">
-            A modern, responsive Tic-Tac-Toe game.
-          </p>
-          <div class="project-buttons">
-            <a
-              href="https://github.com/AliAlshaheen/Tic-Tac-Toe"
-              target="_blank"
-              class="project-link"
-              >View on GitHub</a
-            >
-            <a
-              href="https://alialshaheen.github.io/Tic-Tac-Toe/"
-              target="_blank"
-              class="project-link live-link"
-              >View Project</a
-            >
-          </div>
-        </div>
-        <div
-          class="project"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="100"
-        >
-          <img
-            src="images/wordle-clone.png"
-            alt="Wordle Clone Project"
-            class="project-img"
-          />
-          <h3 class="project-title">Wordle Clone</h3>
-          <p class="project-description">Guess the 5-letter word in 6 tries!</p>
-          <div class="project-buttons">
-            <a
-              href="https://github.com/AliAlshaheen/wordle-clone"
-              target="_blank"
-              class="project-link"
-              >View on GitHub</a
-            >
-            <a
-              href="https://alialshaheen.github.io/wordle-clone/"
-              target="_blank"
-              class="project-link live-link"
-              >View Project</a
-            >
-          </div>
-        </div>
-        <div
-          class="project"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="150"
-        >
-          <img
-            src="images/StudyFlip.png"
-            alt="StudyFlip Project"
-            class="project-img"
-          />
-          <h3 class="project-title">StudyFlip</h3>
-          <p class="project-description">
-            Create, study, and test yourself on custom flashcards.
-          </p>
-          <div class="project-buttons">
-            <a
-              href="https://github.com/AliAlshaheen/StudyFlip"
-              target="_blank"
-              class="project-link"
-              >View on GitHub</a
-            >
-            <a
-              href="https://alialshaheen.github.io/StudyFlip/"
-              target="_blank"
-              class="project-link live-link"
-              >View Project</a
-            >
-          </div>
-        </div>
-      </div>
     </section>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({ once: false, offset: 50 });
-    </script>
-  </body>
+
+    <section class="projects" id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-icon">📱</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">QR Code Generator</h3>
+                    <p class="project-description">
+                        A modern QR code generator with real-time preview and customization options. Built with vanilla JavaScript and cutting-edge CSS animations.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/AliAlshaheen/QR-Code-Generator" class="project-link">GitHub</a>
+                        <a href="https://alialshaheen.github.io/QR-Code-Generator/" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-icon">🎮</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Tic-Tac-Toe Game</h3>
+                    <p class="project-description">
+                        An interactive Tic-Tac-Toe game featuring smooth animations, AI opponent, and score tracking. Showcases advanced state management.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/AliAlshaheen/Tic-Tac-Toe" class="project-link">GitHub</a>
+                        <a href="https://alialshaheen.github.io/Tic-Tac-Toe/" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-icon">🔤</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Wordle Clone</h3>
+                    <p class="project-description">
+                        A fully functional Wordle clone with keyboard support, animations, and statistics tracking. Built with modern JavaScript patterns.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/AliAlshaheen/wordle-clone" class="project-link">GitHub</a>
+                        <a href="https://alialshaheen.github.io/wordle-clone/" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <div class="project-icon">📚</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">StudyFlip</h3>
+                    <p class="project-description">
+                        An interactive flashcard application for efficient studying. Features include card creation, progress tracking, and spaced repetition.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/AliAlshaheen/StudyFlip" class="project-link">GitHub</a>
+                        <a href="https://alialshaheen.github.io/StudyFlip/" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Let's Create Something Amazing</h2>
+            <p class="contact-text">
+                I'm always excited to work on new projects and collaborate with fellow developers.
+                Whether you have a project in mind or just want to connect, feel free to reach out!
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/AliAlshaheen" class="social-link" target="_blank">
+                    <span>🐙</span>
+                </a>
+                <a href="https://www.linkedin.com/in/alialshaheen/" class="social-link" target="_blank">
+                    <span>💼</span>
+                </a>
+                <a href="mailto:alihadeeralshaheen@gmail.com" class="social-link">
+                    <span>✉️</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ali Alshaheen. Crafted with passion and pixels.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
